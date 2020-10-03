@@ -55,6 +55,12 @@ namespace UserMaintenance
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int v = Convert.ToInt32(listUsers.SelectedIndex);
+            users.RemoveAt(v);
+        }
     }
     
 }
