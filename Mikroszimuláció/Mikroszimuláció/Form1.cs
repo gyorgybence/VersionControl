@@ -25,11 +25,34 @@ namespace Mikroszimuláció
         {
             InitializeComponent();
             Population = GetPopulation(@"C:\Temp\nép.csv");
-            BirthProbabilities = GetBP(@"C:\Temp\születés.csv");
-            DeathProbabilities = GetDP(@"C:\Temp\halál.csv");
+            BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
+            DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
             dataGridView1.DataSource = BirthProbabilities;
+            Simulation();
 
         }
+
+        private void Simulation()
+        {
+            for (int year = 2005; year <= 2024; year++)
+            {
+                // Végigmegyünk az összes személyen
+                for (int i = 0; i < Population.Count; i++)
+                {
+                    // Ide jön a szimulációs lépés
+                }
+
+                int nbrOfMales = (from x in Population
+                                  where x.Gender == Gender.Male && x.IsAlive
+                                  select x).Count();
+                int nbrOfFemales = (from x in Population
+                                    where x.Gender == Gender.Female && x.IsAlive
+                                    select x).Count();
+                Console.WriteLine(
+                    string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
+            }
+        }
+
         public List<Person> GetPopulation(string csvpath)
         {
             List<Person> population = new List<Person>();
@@ -50,7 +73,7 @@ namespace Mikroszimuláció
 
             return population;
         }
-        public List<BirthProbability> GetBP(string csvpath)
+        public List<BirthProbability> GetBirthProbabilities(string csvpath)
         {
             List<BirthProbability> BProbability = new List<BirthProbability>();
 
@@ -73,7 +96,7 @@ namespace Mikroszimuláció
             return BProbability;
 
         }
-        public List<DeathProbability> GetDP(string csvpath)
+        public List<DeathProbability> GetDeathProbabilities(string csvpath)
         {
             List<DeathProbability> DProbability = new List<DeathProbability>();
 
