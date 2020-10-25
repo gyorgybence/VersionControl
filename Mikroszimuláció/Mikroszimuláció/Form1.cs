@@ -24,16 +24,19 @@ namespace Mikroszimuláció
         public Form1()
         {
             InitializeComponent();
-            Population = GetPopulation(@"C:\Temp\nép.csv");
-            BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
-            DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
+            
+            
            
-            Simulation();
+            
 
         }
 
         private void Simulation()
-        {
+        { 
+        Population = GetPopulation(@"C:\Temp\nép.csv");
+        BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
+        DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
+        
             for (int year = 2005; year <= 2024; year++)
             {
                 // Végigmegyünk az összes személyen
