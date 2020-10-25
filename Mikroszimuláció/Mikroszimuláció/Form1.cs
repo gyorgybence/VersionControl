@@ -153,5 +153,20 @@ namespace Mikroszimuláció
 
             return DProbability;
         }
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Simulation();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog odf = new OpenFileDialog();
+            if (odf.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = @"C:\Temp\nép.csv";
+            }
+        }
+
+
     }
 }
