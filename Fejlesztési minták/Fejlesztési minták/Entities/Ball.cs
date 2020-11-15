@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Fejlesztési_minták.Entities
 {
-    class Ball: Label
+    public class Ball: Label
     {
         public Ball()
         {
