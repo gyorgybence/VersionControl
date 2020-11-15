@@ -8,6 +8,6 @@ namespace Fejlesztési_minták.Abstractions
 {
    public interface IToyFactory
     {
-        Toy Createnew();
+        Toy CreateNew();
     }
 }
