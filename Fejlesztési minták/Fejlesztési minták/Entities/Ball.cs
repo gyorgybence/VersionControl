@@ -11,9 +11,10 @@ namespace Fejlesztési_minták.Entities
 {
     public class Ball: Toy
     {
-        public Ball()
+        public SolidBrush BallColor { get; private set; }
+        public Ball(Color color)
         {
-            
+            BallColor = new SolidBrush(color);
         }
 
 
